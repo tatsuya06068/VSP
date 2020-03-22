@@ -1,0 +1,21 @@
+﻿@page
+@model paybook.Views.login.LoginModel
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<form method="post"  asp-controller="Menu" asp-action="UserConfirm">
+    <div class="text-center">
+        <fieldset>
+            <legend>ログイン</legend>
+           
+            <p class="text-danger">@ViewBag.eMessage</p>
+            <label>ユーザー名</label>
+            <input type="text" name="userName" value="" />
+            <br />
+            <label>パスワード</label>
+            <input type="password" name="password" maxlength="8" value="" />
+            <br />
+            <input type="submit"/>
+        </fieldset>
+    </div>
+</form>

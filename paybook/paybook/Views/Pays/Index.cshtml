@@ -1,0 +1,70 @@
+﻿@model IEnumerable<paybook.Models.Pay>
+
+@{
+    ViewData["Title"] = "一覧";
+}
+
+<h1>支払一覧</h1>
+
+<p>
+    <a asp-action="Create">追加</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                選択
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.money)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.payMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.insdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            <td>
+                <textarea style="height:2em; width:3em;">@Html.DisplayFor(modelItem => item.payee)</textarea>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.money)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insdate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

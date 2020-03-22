@@ -1,0 +1,55 @@
+﻿@model paybook.Models.Pay
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pay</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="payee" class="control-label"></label>
+                <input asp-for="payee" class="form-control" />
+                <span asp-validation-for="payee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="money" class="control-label"></label>
+                <input asp-for="money" class="form-control" />
+                <span asp-validation-for="money" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bank" class="control-label"></label>
+                <input asp-for="bank" class="form-control" />
+                <span asp-validation-for="bank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="payDay" class="control-label"></label>
+                <input asp-for="payDay" class="form-control" />
+                <span asp-validation-for="payDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="payMonth" class="control-label"></label>
+                <input asp-for="payMonth" class="form-control" />
+                <span asp-validation-for="payMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="insdate" class="control-label"></label>
+                <input asp-for="insdate" class="form-control" />
+                <span asp-validation-for="insdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
